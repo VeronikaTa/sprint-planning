@@ -36,10 +36,10 @@ public class Sprint {
     }
 
     public boolean addBug(Bug bugReport) {
-        if (bugReport == null) {
+        if(bugReport == null){
             return false;
         }
-        if (!(ticketCompleted(bugReport)) && this.ticketWithinLimit(bugReport) && this.ticketSatisfyEstimate(bugReport)) {
+        if (!ticketCompleted(bugReport) && this.ticketWithinLimit(bugReport) && this.ticketSatisfyEstimate(bugReport)) {
             this.tickets[index] = bugReport;
             this.index++;
             return true;
@@ -50,7 +50,13 @@ public class Sprint {
 
     public Ticket[] getTickets() {
         if (this.tickets != null) {
-            Ticket[] getTickets = new Ticket[this.ticketsLimit];
+            int ticketsAddedLength = 0;
+            for (Ticket ticket : this.tickets) {
+                if (ticket != null) {
+                    ticketsAddedLength++;
+                }
+            }
+            Ticket[] getTickets = new Ticket[ticketsAddedLength];
             for (int i = 0; i < getTickets.length; i++) {
                 if (this.tickets[i] != null) {
                     getTickets[i] = this.tickets[i];
@@ -84,11 +90,11 @@ public class Sprint {
         if(userStory.getDependencies() == null){
             return true;
         }
-        if (userStory.getDependencies() != null && this.getTickets() == null) {
+        if (this.getTickets() == null) {
             return false;
         }
 
-        if (userStory.getDependencies() != null && !(this.presentDependenciesCompleted(userStory))) {
+        if (this.uncompletedDependenciesPresent(userStory)) {
             return true;
         } else {
             return false;
@@ -99,29 +105,25 @@ public class Sprint {
         return this.index <= (this.ticketsLimit - 1);
     }
 
-    private boolean presentDependenciesCompleted(UserStory userStory) {
-        boolean completed = false;
+    private boolean uncompletedDependenciesPresent(UserStory userStory) {
+        boolean present = false;
         UserStory[] dependencies = userStory.getDependencies();
-        int ticketsAddedLength = 0;
-        for (Ticket ticket : this.tickets) {
-            if (ticket != null) {
-                ticketsAddedLength++;
-            }
-        }
 
         if (userStory.getDependencies() != null) {
-            for (int i = 0; i < ticketsAddedLength; i++) {
-                for (int j = 0; j < dependencies.length; j++) {
-                    if (this.getTickets()[i].getId() == dependencies[j].getId() && dependencies[j].isCompleted()) {
-                        completed = true;
-                    }
-                    else{
-                        completed = false;
-                        break;
+            for (int i = 0; i < dependencies.length; i++) {
+                if(!dependencies[i].isCompleted()){
+                    for(int j = 0; j < this.getTickets().length; j++){
+                        if(dependencies[i].getId() == this.getTickets()[j].getId()){
+                            present = true;
+                        }
+                        else{
+                            present = false;
+                        }
                     }
                 }
             }
         }
-        return completed;
+        return present;
     }
+
 }

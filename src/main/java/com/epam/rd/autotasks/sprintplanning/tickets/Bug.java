@@ -1,7 +1,7 @@
 package com.epam.rd.autotasks.sprintplanning.tickets;
 
 public class Bug extends Ticket {
-    private UserStory userStory;
+    public UserStory userStory;
 
     public static Bug createBug(int id, String name, int estimate, UserStory userStory) {
          if(userStory.isCompleted() && userStory != null){
@@ -20,6 +20,6 @@ public class Bug extends Ticket {
 
     @Override
     public String toString() {
-        return "[Bug " + this.getId() + "] " + this.getName() + ":" + this.userStory.getName();
+        return "[Bug " + this.getId() + "] " + this.userStory.getName() + ": " + this.getName();
     }
 }
