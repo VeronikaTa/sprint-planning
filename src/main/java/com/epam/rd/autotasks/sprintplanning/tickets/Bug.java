@@ -20,6 +20,6 @@ public class Bug extends Ticket {
 
     @Override
     public String toString() {
-        return "[" + this.getId() + "] " + this.getName() + ":" + this.userStory.getName();
+        return "[Bug " + this.getId() + "] " + this.getName() + ":" + this.userStory.getName();
     }
 }
