@@ -1,4 +1,4 @@
-package com.epam.rd.autotasks.sprintplanning.tickets;
+package com.epam.training.student_veronika_tarasova.sprint_planning.src.main.java.com.epam.rd.autotasks.sprintplanning.tickets;
 
 public class  Ticket {
     protected int id;

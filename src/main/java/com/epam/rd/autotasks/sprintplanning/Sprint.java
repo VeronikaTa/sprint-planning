@@ -1,8 +1,8 @@
-package com.epam.rd.autotasks.sprintplanning;
+package com.epam.training.student_veronika_tarasova.sprint_planning.src.main.java.com.epam.rd.autotasks.sprintplanning;
 
-import com.epam.rd.autotasks.sprintplanning.tickets.Bug;
-import com.epam.rd.autotasks.sprintplanning.tickets.Ticket;
-import com.epam.rd.autotasks.sprintplanning.tickets.UserStory;
+import com.epam.training.student_veronika_tarasova.sprint_planning.src.main.java.com.epam.rd.autotasks.sprintplanning.tickets.Bug;
+import com.epam.training.student_veronika_tarasova.sprint_planning.src.main.java.com.epam.rd.autotasks.sprintplanning.tickets.Ticket;
+import com.epam.training.student_veronika_tarasova.sprint_planning.src.main.java.com.epam.rd.autotasks.sprintplanning.tickets.UserStory;
 
 public class Sprint {
 

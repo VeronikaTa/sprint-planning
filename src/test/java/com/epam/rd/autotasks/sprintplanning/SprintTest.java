@@ -1,13 +1,12 @@
-package com.epam.rd.autotasks.sprintplanning;
+package com.epam.training.student_veronika_tarasova.sprint_planning.src.test.java.com.epam.rd.autotasks.sprintplanning;
 
-import com.epam.rd.autotasks.sprintplanning.tickets.Bug;
-import com.epam.rd.autotasks.sprintplanning.tickets.Ticket;
-import com.epam.rd.autotasks.sprintplanning.tickets.UserStory;
+import com.epam.training.student_veronika_tarasova.sprint_planning.src.main.java.com.epam.rd.autotasks.sprintplanning.Sprint;
+import com.epam.training.student_veronika_tarasova.sprint_planning.src.main.java.com.epam.rd.autotasks.sprintplanning.tickets.Bug;
+import com.epam.training.student_veronika_tarasova.sprint_planning.src.main.java.com.epam.rd.autotasks.sprintplanning.tickets.Ticket;
+import com.epam.training.student_veronika_tarasova.sprint_planning.src.main.java.com.epam.rd.autotasks.sprintplanning.tickets.UserStory;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class SprintTest {
 
